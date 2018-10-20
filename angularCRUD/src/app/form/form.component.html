@@ -1,0 +1,9 @@
+  <h2> My Campaigns</h2>
+  <ul class="elements">
+    <li *ngFor="let elem of listEl" (click)="onSelect(elem)" [class.selected]="elem === selectedElem">
+      <span>{{elem.name}}</span> {{elem.keyWords}}
+    </li>
+  </ul>
+  
+  <app-form-details [elem]="selectedElem"></app-form-details>
+

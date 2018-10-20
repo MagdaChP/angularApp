@@ -1,0 +1,39 @@
+<div *ngIf="elem">
+
+  <h2> {{elem.name | uppercase}} Details</h2>
+
+  <div>
+    <span>Campaign Name: </span>{{elem.name}}</div>
+  <div>
+    <label>Campaign name: 
+      <input [(ngModel)]="elem.name" placeholder="campain name">
+    </label>
+  </div>
+
+  <input [(ngModel)]="elem.keyWords" placeholder="Key Words" type="text" id="keywords" class="mdc-text-field__input" required>
+  <label class="mdc-floating-label" for="my-text-field">Keywords</label>
+  <div class="mdc-line-ripple"></div>
+
+  <input [(ngModel)]="elem.bidAmount" placeholder="Bid amount" type="text" id="bidAmount" class="mdc-text-field__input" required>
+  <label class="mdc-floating-label" for="my-text-field">Bid amount</label>
+  <div class="mdc-line-ripple"></div>
+
+  <input [(ngModel)]="elem.campaignFund" placeholder="Campaign fund" type="text" id="campaignFund" class="mdc-text-field__input"
+    required>
+  <label class="mdc-floating-label" for="my-text-field">Campaign fund</label>
+  <div class="mdc-line-ripple"></div>
+
+  <label class="mdc-floating-label" for="my-text-field">Set status </label>
+  <input [(ngModel)]="elem.status" type="radio" value=true id="statusActive" class="mdc-text-field__input" required> Active
+  <input [(ngModel)]="elem.status" type="radio" value=false id="statusInactive" class="mdc-text-field__input" required> Inactive
+  <div class="mdc-line-ripple"></div>
+
+  <input [(ngModel)]="elem.town" placeholder="Town" type="select" id="town" class="mdc-text-field__input" required>
+  <label class="mdc-floating-label" for="my-text-field">Town</label>
+  <div class="mdc-line-ripple"></div>
+
+  <input [(ngModel)]="elem.radius" placeholder="Radius" type="select" id="radius" class="mdc-text-field__input" required>
+  <label class="mdc-floating-label" for="my-text-field">Radius [km]</label>
+  <div class="mdc-line-ripple"></div>
+
+</div>
