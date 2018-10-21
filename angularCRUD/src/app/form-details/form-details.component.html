@@ -5,7 +5,7 @@
   <div>
     <span>Campaign Name: </span>{{elem.name}}</div>
   <div>
-    <label>Campaign name: 
+    <label>Campaign name:
       <input [(ngModel)]="elem.name" placeholder="campain name">
     </label>
   </div>
@@ -35,5 +35,5 @@
   <input [(ngModel)]="elem.radius" placeholder="Radius" type="select" id="radius" class="mdc-text-field__input" required>
   <label class="mdc-floating-label" for="my-text-field">Radius [km]</label>
   <div class="mdc-line-ripple"></div>
-
+  <button (click)="save()">save</button>
 </div>

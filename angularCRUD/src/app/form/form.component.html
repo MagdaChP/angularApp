@@ -1,9 +1,13 @@
   <h2> My Campaigns</h2>
+  <span>Choose an element to show its details, edit or add it:</span>
   <ul class="elements">
     <li *ngFor="let elem of listEl" (click)="onSelect(elem)" [class.selected]="elem === selectedElem">
       <span>{{elem.name}}</span> {{elem.keyWords}}
     </li>
   </ul>
-  
+  <label>Add a new Campaing name:
+    <input #elemName />
+  </label>
+  <button (click)="add(elemName.value); elemName.value=''">Add</button>
   <app-form-details [elem]="selectedElem"></app-form-details>
 

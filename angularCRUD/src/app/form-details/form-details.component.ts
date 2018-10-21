@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Elem } from '../list';
+import { FormService }  from '../form.service';
 
 @Component({
   selector: 'app-form-details',
@@ -8,9 +9,13 @@ import { Elem } from '../list';
 })
 export class FormDetailsComponent implements OnInit {
   @Input() elem: Elem;
-  constructor() { }
-
+  constructor(
+    private formService: FormService,
+  ) { }
   ngOnInit() {
   }
-
+  save(): void {
+    this.formService.updateElem(this.elem);
+  }
+  
 }

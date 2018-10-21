@@ -22,10 +22,11 @@
     "@angular/router": "~7.0.0",
     "@material/textfield": "^0.40.1",
     "@types/material__textfield": "^0.35.0",
-    "angular-in-memory-web-api": "^0.6.1",
+    "angular-in-memory-web-api": "^0.5.4",
     "core-js": "^2.5.4",
     "material-components-web": "^0.40.1",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
