@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { FormDetailsComponent } from './form-details/form-details.component';
 import { FormService } from './form.service';
+import { NewCampaignComponent } from './new-campaign/new-campaign.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FormService } from './form.service';
     AppComponent,
     FormComponent,
     FormDetailsComponent,
+    NewCampaignComponent,
   ],
   providers: [FormService],
   bootstrap: [AppComponent]

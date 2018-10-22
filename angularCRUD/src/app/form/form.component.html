@@ -1,13 +1,43 @@
+<div>
   <h2> My Campaigns</h2>
-  <span>Choose an element to show its details, edit or add it:</span>
+  <span>Choose an element to show its details or edit it:</span>
   <ul class="elements">
     <li *ngFor="let elem of listEl" (click)="onSelect(elem)" [class.selected]="elem === selectedElem">
-      <span>{{elem.name}}</span> {{elem.keyWords}}
+      <span>{{elem.name}}</span>
+      <button class="delete" title="delete elem" (click)="delete(elem)">x</button>
     </li>
   </ul>
-  <label>Add a new Campaing name:
-    <input #elemName />
-  </label>
-  <button (click)="add(elemName.value); elemName.value=''">Add</button>
   <app-form-details [elem]="selectedElem"></app-form-details>
-
+</div>
+<div class="form-group">
+  Add new camapign
+  <label for="name"> Campaing name:
+    <input type="text" required #elemName name="name" class="form-control"/>
+  </label>
+  <label> Key words:
+    <input #key name="key"/>
+  </label>
+  <label> Bid amount:
+    <input #bid name="bid"/>
+  </label>
+  <label> Campaign Fund:
+    <input #fund name="fund"/>
+  </label>
+  <label> Status:
+    <input type="radio" value=true #status name="statusOn"/>On
+    <input type="radio" value=false #status name="statusOff" />Off
+  </label>
+  <label> Radius [km]:
+    <input #radius name="radius" />
+  </label>
+  <div class="form-group">
+    <label for="towns">Town</label>
+    <select class="form-control" id="town" required #town name="town">
+      <option *ngFor="let town of towns" [value]="town">{{town}}</option>
+    </select>
+    <!-- <div [hidden]="town.valid || town.pristine" class="alert alert-danger">
+      Town is required.
+    </div> -->
+  </div>
+</div>
+<button type="submit" (click)="add(elemName.value, key.value, bid.value, fund.value, status.value, town.value, radius.value); form.reset()">Add</button>

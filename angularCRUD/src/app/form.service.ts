@@ -25,6 +25,13 @@ export class FormService {
   updateElem(elem: Elem): Observable<any> {
     return this.http.put(this.elemsUrl, elem, httpOptions)
   }
+  /** DELETE: delete the hero from the server */
+deleteElem (hero: Elem | number): Observable<Elem> {
+  const id = typeof hero === 'number' ? hero : hero.id;
+  const url = `${this.elemsUrl}/${id}`;
+
+  return this.http.delete<Elem>(url, httpOptions);
+}
   /** POST: add a new hero to the server */
 addElem (elem: Elem): Observable<Elem> {
   return this.http.post<Elem>(this.elemsUrl, elem, httpOptions);
