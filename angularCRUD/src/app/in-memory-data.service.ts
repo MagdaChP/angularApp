@@ -10,42 +10,32 @@ export class InMemoryDataService implements InMemoryDbService {
     const listEl: Elem[] = [
       {
         id: 1,
-        name: 'Robert',
-        keyWords: 'wind',
+        name: 'Chrismas Decorations',
+        keyWords: 'christmas decoration',
         bidAmount: 15000,
         campaignFund: 150000,
         status: true,
-        town: 'Kraków',
+        town: 'Cracow',
         radius: 150
       },
       {
         id: 2,
-        name: 'Magda',
-        keyWords: 'sun',
+        name: 'New Years Eve Accessories',
+        keyWords: 'New Yesr Eve Accessories',
         bidAmount: 25000,
         campaignFund: 250000,
         status: false,
-        town: 'Krosno',
+        town: 'New York',
         radius: 100
       },
       {
         id: 3,
-        name: 'Mikołaj',
-        keyWords: 'snow',
+        name: 'Wedding Party flowers',
+        keyWords: 'Wedding Party flowers',
         bidAmount: 28000,
         campaignFund: 290000,
         status: true,
-        town: 'Szczecin',
-        radius: 300
-      },
-      {
-        id: 4,
-        name: 'Zenek',
-        keyWords: 'snow',
-        bidAmount: 28000,
-        campaignFund: 290000,
-        status: true,
-        town: 'Szczecin',
+        town: 'London',
         radius: 300
       }];
     return { listEl };

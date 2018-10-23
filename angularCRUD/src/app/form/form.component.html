@@ -1,43 +1,55 @@
-<div>
-  <h2> My Campaigns</h2>
+<div class="group">
+  <h1> My Campaigns</h1>
   <span>Choose an element to show its details or edit it:</span>
+
   <ul class="elements">
     <li *ngFor="let elem of listEl" (click)="onSelect(elem)" [class.selected]="elem === selectedElem">
-      <span>{{elem.name}}</span>
-      <button class="delete" title="delete elem" (click)="delete(elem)">x</button>
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span class="list-text">{{elem.name}}</span>
+          <span class="example-spacer"></span>
+          <button class="delete" title="delete elem" (click)="delete(elem)">
+            <mat-icon class="example-icon">delete</mat-icon>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
     </li>
   </ul>
   <app-form-details [elem]="selectedElem"></app-form-details>
 </div>
-<div class="form-group">
-  Add new camapign
-  <label for="name"> Campaing name:
-    <input type="text" required #elemName name="name" class="form-control"/>
-  </label>
-  <label> Key words:
-    <input #key name="key"/>
-  </label>
-  <label> Bid amount:
-    <input #bid name="bid"/>
-  </label>
-  <label> Campaign Fund:
-    <input #fund name="fund"/>
-  </label>
-  <label> Status:
-    <input type="radio" value=true #status name="statusOn"/>On
-    <input type="radio" value=false #status name="statusOff" />Off
-  </label>
-  <label> Radius [km]:
-    <input #radius name="radius" />
-  </label>
-  <div class="form-group">
-    <label for="towns">Town</label>
-    <select class="form-control" id="town" required #town name="town">
-      <option *ngFor="let town of towns" [value]="town">{{town}}</option>
-    </select>
-    <!-- <div [hidden]="town.valid || town.pristine" class="alert alert-danger">
-      Town is required.
-    </div> -->
+
+<div class="group">
+  <h2>Add new campaign</h2>
+  <div class="new-form-container">
+    <mat-form-field>
+      <input matInput placeholder="Campaing name" type="text" required #newName name="newName" class="form-control" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Key words" required #newKey name="newKey" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Bid amount" #newBid name="newBid" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Campaign Fund" #newFund name="newFund" />
+    </mat-form-field>
+    <mat-radio-group class="example-radio-group" placeholder="Status">
+      <mat-radio-button class="example-radio-button" #newStatus [value]=true>
+        Active
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button" #newStatus [value]=false>
+        Inactive
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field>
+      <input matInput placeholder="Radius [km]" #newRadius name="newRadius" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Town" #newTown name="newTown">
+        <mat-option *ngFor="let town of towns" [value]="town">{{town}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
+  <button mat-raised-button color="primary" (click)="add(newName.value, newKey.value, newBid.value, newFund.value, newStatus.value, newTown.value, newRadius.value)">Add</button>
 </div>
-<button type="submit" (click)="add(elemName.value, key.value, bid.value, fund.value, status.value, town.value, radius.value); form.reset()">Add</button>

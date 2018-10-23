@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MDCTextField } from '@material/textfield';
 import { Elem } from '../list';
 import { FormService } from '../form.service';
 import { ListEl } from '../mock-list';
@@ -12,9 +11,8 @@ import { ListEl } from '../mock-list';
 export class FormComponent implements OnInit {
   listEl: Elem[];
   selectedElem: Elem;
-  
+  favoriteSeason: string;
   towns = ['New York', 'London', 'Cracow', 'Berlin'];
-  // model = new Elem;
   submitted = false;
 
   constructor(private formService: FormService) { }
@@ -42,5 +40,4 @@ export class FormComponent implements OnInit {
         this.listEl.push(el);
       });
   }
-  onSubmit() { this.submitted = true; }
 }
