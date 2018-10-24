@@ -13,10 +13,12 @@ export class InMemoryDataService implements InMemoryDbService {
         name: 'Chrismas Decorations',
         keyWords: 'christmas decoration',
         bidAmount: 15000,
-        campaignFund: 150000,
+        campaignFund: 600000,
         status: true,
         town: 'Cracow',
-        radius: 150
+        radius: 150,
+        Emerald : 123000,
+        spendings: 120
       },
       {
         id: 2,
@@ -26,17 +28,21 @@ export class InMemoryDataService implements InMemoryDbService {
         campaignFund: 250000,
         status: false,
         town: 'New York',
-        radius: 100
+        radius: 100,
+        Emerald : 123000,
+        spendings: 120
       },
       {
         id: 3,
         name: 'Wedding Party flowers',
         keyWords: 'Wedding Party flowers',
         bidAmount: 28000,
-        campaignFund: 290000,
+        campaignFund: 45,
         status: true,
         town: 'London',
-        radius: 300
+        radius: 300,
+        Emerald : 123000,
+        spendings: 120
       }];
     return { listEl };
   }

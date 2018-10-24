@@ -7,4 +7,6 @@ export class Elem {
     status: boolean;
     town: string;
     radius: number;
+    Emerald : number;
+    spendings: number;
   }

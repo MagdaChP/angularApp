@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Elem } from '../list';
 import { FormService } from '../form.service';
-import { ListEl } from '../mock-list';
 
 @Component({
   selector: 'app-form',
@@ -11,11 +10,11 @@ import { ListEl } from '../mock-list';
 export class FormComponent implements OnInit {
   listEl: Elem[];
   selectedElem: Elem;
-  favoriteSeason: string;
   towns = ['New York', 'London', 'Cracow', 'Berlin'];
   submitted = false;
+  fund: number;
 
-  constructor(private formService: FormService) { }
+  constructor(private formService: FormService) {  console.log('selectedEl',this.selectedElem); }
 
   ngOnInit() {
     this.getElems();

@@ -1,21 +1,24 @@
-<div class="group">
-  <h1> My Campaigns</h1>
-  <span>Choose an element to show its details or edit it:</span>
-
-  <ul class="elements">
-    <li *ngFor="let elem of listEl" (click)="onSelect(elem)" [class.selected]="elem === selectedElem">
-      <mat-toolbar color="primary">
-        <mat-toolbar-row>
-          <span class="list-text">{{elem.name}}</span>
-          <span class="example-spacer"></span>
-          <button class="delete" title="delete elem" (click)="delete(elem)">
-            <mat-icon class="example-icon">delete</mat-icon>
-          </button>
-        </mat-toolbar-row>
-      </mat-toolbar>
-    </li>
-  </ul>
-  <app-form-details [elem]="selectedElem"></app-form-details>
+<div class="group campaigns-container">
+  <div class="list-details-wrapper">
+    <div class="list-wrapper">
+      <h1> My Campaigns</h1>
+      <span>Choose an element to show its details or edit it:</span>
+      <ul class="elements">
+        <li *ngFor="let elem of listEl" (click)="onSelect(elem)" [class.selected]="elem === selectedElem">
+          <mat-toolbar color="primary">
+            <mat-toolbar-row>
+              <span class="list-text">{{elem.name}}</span>
+              <span class="example-spacer"></span>
+              <button class="delete" title="delete elem" (click)="delete(elem)">
+                <mat-icon class="example-icon">delete</mat-icon>
+              </button>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </li>
+      </ul>
+    </div>
+    <app-form-details [elem]="selectedElem"></app-form-details>
+  </div>
 </div>
 
 <div class="group">
@@ -23,15 +26,19 @@
   <div class="new-form-container">
     <mat-form-field>
       <input matInput placeholder="Campaing name" type="text" required #newName name="newName" class="form-control" />
+      <span class="validity"></span>
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Key words" required #newKey name="newKey" />
+      <span class="validity"></span>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Bid amount" #newBid name="newBid" />
+      <input matInput placeholder="Bid amount" type="number" required min="100" #newBid name="newBid" />
+      <span class="validity"></span>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Campaign Fund" #newFund name="newFund" />
+      <input matInput placeholder="Campaign Fund" type="number" required #newFund name="newFund" />
+      <span class="validity"></span>
     </mat-form-field>
     <mat-radio-group class="example-radio-group" placeholder="Status">
       <mat-radio-button class="example-radio-button" #newStatus [value]=true>
@@ -42,12 +49,13 @@
       </mat-radio-button>
     </mat-radio-group>
     <mat-form-field>
-      <input matInput placeholder="Radius [km]" #newRadius name="newRadius" />
+      <input matInput placeholder="Radius [km]" type="number" required #newRadius name="newRadius" />
+      <span class="validity"></span>
     </mat-form-field>
 
     <mat-form-field>
       <mat-select placeholder="Town" #newTown name="newTown">
-        <mat-option *ngFor="let town of towns" [value]="town">{{town}}</mat-option>
+        <mat-option *ngFor="let town of towns" required [value]="town">{{town}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>

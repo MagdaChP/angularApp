@@ -1,23 +1,48 @@
  .example-icon {
-  padding: 0 14px;
-}
-.example-spacer {
-  flex: 1 1 auto;
-}
-.new-form-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  mat-form-field {
-    margin: 0 1%;
-  }
-  mat-radio-group {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    mat-radio-button{
-      margin: 1px 0;
-    }
-  }
-   
-}
+     padding: 0 14px;
+ }
+
+ .example-spacer {
+     flex: 1 1 auto;
+ }
+
+ .campaigns-container {
+     width: 100%;
+     .list-details-wrapper {
+         display: flex;
+         flex-direction: row;
+         .list-wrapper {
+             width: 48%;
+         }
+     }
+ }
+
+ .new-form-container {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     mat-form-field {
+         margin: 0 1%;
+         input:invalid+span::after {
+             position: absolute;
+             color: red;
+             content: '✖';
+             padding-left: 5px;
+         }
+         input:valid+span::after {
+             position: absolute;
+             color: green;
+             content: '✓';
+             padding-left: 5px;
+         }
+     }
+     mat-radio-group {
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         padding-left: 15px;
+         mat-radio-button {
+             margin: 1px 0;
+         }
+     }
+ }

@@ -1,12 +1,20 @@
-.detail-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 150%;
-    mat-radio-group {
-        margin: 0.5% 0;
-        mat-radio-button{
-            margin: 1% 0.5% 2% 0;
+.right-details {
+    padding: 22% 10% 0 0;
+    position: relative;
+    left: 8%;
+    top: -2%;
+    .detail-form-container {
+        display: flex;
+        flex-direction: column;
+        width: 150%;
+        mat-radio-group {
+            margin: 0.5% 0;
+            mat-radio-button {
+                margin: 1% 0.5% 2% 0;
+            }
+        }
+        button {
+            margin: 2% 0;
         }
     }
 }
